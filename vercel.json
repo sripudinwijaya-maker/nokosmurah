@@ -1,6 +1,12 @@
 {
-  "version": 2,
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": null,
+  "installCommand": null,
+  "outputDirectory": ".",
   "functions": {
-    "api/*.js": { "maxDuration": 30 }
+    "api/smsbower.mjs": {
+      "maxDuration": 30
+    }
   }
 }

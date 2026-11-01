@@ -1,19 +1,16 @@
-# SMSBower Personal Client — Static Vercel layout
+# SMSBower Personal Client
 
-Struktur root:
-- `api/smsbower.js` — Vercel serverless API proxy
-- `app/style.css` dan `app/script.js` — aset frontend
-- `index.html` — halaman utama root
-- `vercel.json` — konfigurasi fungsi API
+Struktur sederhana: HTML/CSS/JavaScript untuk tampilan, dan Vercel Function untuk API SMSBower.
 
-## Deploy GitHub → Vercel
-1. Upload seluruh isi folder ini ke root repository GitHub (jangan upload folder induknya sebagai subfolder).
-2. Import repository di Vercel. Framework preset pilih **Other**.
-3. Build Command: kosongkan / Override off. Output Directory: `.` atau default. Jangan isi Root Directory dengan `app`.
-4. Project Settings → Environment Variables:
-   - `SMSBOWER_API_KEY` = API key SMSBower
-5. Deploy ulang.
+## Deploy
+1. Upload seluruh isi folder ini ke root repository GitHub.
+2. Import repository ke Vercel.
+3. Framework Preset: Other.
+4. Tambahkan Environment Variable `SMSBOWER_API_KEY`.
+5. Deploy.
 
-Buka domain Vercel. `index.html` harus tampil di root dan endpoint proxy berada di `/api/smsbower`.
+API key hanya disimpan di Environment Variables Vercel, jangan dimasukkan ke file frontend atau GitHub.
 
-API key tidak pernah ditaruh di HTML atau JavaScript frontend. Jika key pernah terekspos, regenerasi key dari akun SMSBower.
+Fitur yang dipertahankan: saldo, daftar layanan, daftar negara, harga/stok provider, pembelian nomor, cek SMS, selesaikan aktivasi, batalkan, dan minta SMS berikutnya.
+
+Gunakan hanya untuk penerimaan SMS yang sah dan sesuai ketentuan layanan terkait.
