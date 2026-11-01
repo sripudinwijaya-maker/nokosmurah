@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#eafff5"><title>SMSBower Personal Client</title>
+<link rel="stylesheet" href="/app/style.css">
+</head>
+<body>
+<main class="shell">
+<header class="top"><div class="brand"><div class="logo">S</div><div><b>SMSBOWER</b><small>PERSONAL CLIENT</small></div></div><div class="balance"><small>Saldo akun</small><strong id="balance">—</strong><button id="refresh" class="refresh">↻</button></div></header>
+<section class="hero"><div><span class="eyebrow">API DASHBOARD</span><h1>Terima SMS<br><em>lebih praktis.</em></h1><p>Kelola nomor dan kode SMS dari satu halaman.</p></div><div class="heroMark">✳</div></section>
+<nav class="tabs"><button class="chosen" data-tab="buy">01 · Beli nomor</button><button data-tab="active">02 · Aktivasi <span id="activeDot"></span></button></nav>
+<section id="buyView" class="panel">
+<div class="sectionHead"><div><span class="step">LANGKAH 01</span><h2>Pilih layanan</h2></div><span class="count" id="serviceCount">Memuat...</span></div>
+<div id="services" class="serviceGrid"><div class="empty">Memuat layanan...</div></div>
+<div class="sectionHead countryHead"><div><span class="step">LANGKAH 02</span><h2>Pilih negara</h2></div></div>
+<input id="countrySearch" class="search" placeholder="⌕  Cari nama negara atau kode...">
+<div id="countries" class="countryList"><div class="empty">Memuat negara...</div></div>
+<div class="sectionHead countryHead"><div><span class="step">LANGKAH 03</span><h2>Harga & provider</h2></div><span class="count" id="providerCount">—</span></div>
+<p class="hint">Harga dan stok langsung dari API SMSBower. Pilih provider tertentu atau biarkan otomatis.</p>
+<div id="providers" class="providerList"><div class="empty">Pilih layanan dan negara.</div></div>
+<label class="fieldLabel" for="maxPrice">Batas harga maksimal (opsional)</label><input id="maxPrice" class="search" inputmode="decimal" placeholder="Contoh: 0.15">
+<button id="buy" class="buyButton">BELI NOMOR SEKARANG →</button><p class="hint center">Pembelian memakai saldo akun SMSBower.</p>
+</section>
+<section id="activeView" class="panel hidden">
+<div class="sectionHead"><div><span class="step">AKTIVASI</span><h2>Nomor & kode SMS</h2></div><span class="liveDot">● LIVE</span></div>
+<div id="activationEmpty" class="empty largeEmpty">Belum ada aktivasi aktif.<br>Pilih dan beli nomor dari tab sebelumnya.</div>
+<div id="activationDetails" class="hidden">
+<div class="numberCard"><small>NOMOR TELEPON</small><strong id="phone">—</strong><small>ID Aktivasi: <span id="activationId">—</span></small><small id="cost"></small></div>
+<div class="smsCard"><small>KODE SMS</small><strong id="smsCode">— — — — — —</strong><span id="smsStatus">Menunggu pesan masuk</span></div>
+<button id="checkSms" class="buyButton">↻ PERIKSA SMS</button>
+<div class="actionGrid"><button id="complete">Selesaikan (6)</button><button id="cancel">Batalkan (8)</button></div>
+<button id="anotherSms" class="secondaryButton">Minta SMS berikutnya (3)</button>
+</div></section>
+<div class="notice"><span>i</span><p id="message">Menghubungkan ke SMSBower...</p></div>
+<footer>SMSBower Personal Client · API key tersimpan di server Vercel.</footer>
+</main><script src="/app/script.js" defer></script>
+</body></html>
